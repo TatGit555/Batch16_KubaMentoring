@@ -59,11 +59,14 @@ public class Test1 {
         WebElement submit = driver.findElement(By.xpath("//button[@type='Submit']"));
         Thread.sleep(1000);
 
-        List<WebElement> allmessages = driver.findElement(By.xpath("//p"));
+        List<WebElement> allmessages = driver.findElements(By.xpath("//p"));
 
-        if(allmessages)
-        Assert.assertTrue(allmessages.get(i).isDisplayed());
-        Thread.sleep(1000);
+        for(int i = 0; i<allmessages.size(); i++){
+            if(allmessages.get(i).isDisplayed())
+                Assert.assertTrue(allmessages.get(i).isDisplayed());
+            Thread.sleep(1000);
+        }
+
 
 
 
