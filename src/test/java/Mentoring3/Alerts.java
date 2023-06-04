@@ -1,3 +1,5 @@
+package Mentoring3;
+
 import Utils.BrowserUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.Alert;
@@ -9,14 +11,11 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.lang.ref.SoftReference;
 import java.time.Duration;
 
-public class Mentoring3 {
+public class Alerts {
     @Test
     public void TC_03() throws InterruptedException {
-
-        //find phone numbers
 
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
@@ -26,7 +25,7 @@ public class Mentoring3 {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get("https://www.lambdatest.com/selenium-playground");
 
-        WebElement jaAlerts = driver.findElement(By.xpath("//a[contains(text(),'Javascript Alerts')]"));//a[contains[.,'Pagination'
+        WebElement jaAlerts = driver.findElement(By.xpath("//a[contains(text(),'Javascript')]"));
         Thread.sleep(1000);
         jaAlerts.click();
 
